@@ -1,0 +1,1799 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Sun Nov  1 21:22:42 2026
+| Host         : [redacted workstation]
+| Command      : report_timing -delay_type max -max_paths 27 -to [get_ports {{lcd_r[*]} {lcd_g[*]} {lcd_b[*]} lcd_de lcd_hsync lcd_vsync}] -file [redacted local provenance path]
+| Design       : demo_touch_pc_top
+| Device       : 7a35t-fgg484
+| Speed File   : -2  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             4.108ns  (required time - arrival time)
+  Source:                 lcd_g_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_g[6]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.636ns  (logic 3.635ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.838ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.788ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.859    -0.788    pixel_clk
+    OLOGIC_X0Y8          FDRE                                         r  lcd_g_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y8          FDRE (Prop_fdre_C_Q)         0.204    -0.584 r  lcd_g_reg[6]/Q
+                         net (fo=1, routed)           0.001    -0.583    lcd_g_OBUF[6]
+    N17                  OBUF (Prop_obuf_I_O)         3.431     2.847 r  lcd_g_OBUF[6]_inst/O
+                         net (fo=0)                   0.000     2.847    lcd_g[6]
+    N17                                                               r  lcd_g[6] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.847    
+  -------------------------------------------------------------------
+                         slack                                  4.108    
+
+Slack (MET) :             4.109ns  (required time - arrival time)
+  Source:                 lcd_g_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_g[5]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.634ns  (logic 3.633ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.838ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.788ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.859    -0.788    pixel_clk
+    OLOGIC_X0Y10         FDRE                                         r  lcd_g_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y10         FDRE (Prop_fdre_C_Q)         0.204    -0.584 r  lcd_g_reg[5]/Q
+                         net (fo=1, routed)           0.001    -0.583    lcd_g_OBUF[5]
+    R18                  OBUF (Prop_obuf_I_O)         3.429     2.846 r  lcd_g_OBUF[5]_inst/O
+                         net (fo=0)                   0.000     2.846    lcd_g[5]
+    R18                                                               r  lcd_g[5] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.846    
+  -------------------------------------------------------------------
+                         slack                                  4.109    
+
+Slack (MET) :             4.112ns  (required time - arrival time)
+  Source:                 lcd_g_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_g[7]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.632ns  (logic 3.631ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.838ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.788ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.859    -0.788    pixel_clk
+    OLOGIC_X0Y7          FDRE                                         r  lcd_g_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y7          FDRE (Prop_fdre_C_Q)         0.204    -0.584 r  lcd_g_reg[7]/Q
+                         net (fo=1, routed)           0.001    -0.583    lcd_g_OBUF[7]
+    P17                  OBUF (Prop_obuf_I_O)         3.427     2.843 r  lcd_g_OBUF[7]_inst/O
+                         net (fo=0)                   0.000     2.843    lcd_g[7]
+    P17                                                               r  lcd_g[7] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.843    
+  -------------------------------------------------------------------
+                         slack                                  4.112    
+
+Slack (MET) :             4.125ns  (required time - arrival time)
+  Source:                 lcd_b_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_b[1]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.618ns  (logic 3.617ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.838ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.788ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.859    -0.788    pixel_clk
+    OLOGIC_X0Y6          FDRE                                         r  lcd_b_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y6          FDRE (Prop_fdre_C_Q)         0.204    -0.584 r  lcd_b_reg[1]/Q
+                         net (fo=1, routed)           0.001    -0.583    lcd_b_OBUF[1]
+    P15                  OBUF (Prop_obuf_I_O)         3.413     2.830 r  lcd_b_OBUF[1]_inst/O
+                         net (fo=0)                   0.000     2.830    lcd_b[1]
+    P15                                                               r  lcd_b[1] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.830    
+  -------------------------------------------------------------------
+                         slack                                  4.125    
+
+Slack (MET) :             4.126ns  (required time - arrival time)
+  Source:                 lcd_r_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_r[0]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.620ns  (logic 3.619ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.840ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.790ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.857    -0.790    pixel_clk
+    OLOGIC_X0Y15         FDRE                                         r  lcd_r_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y15         FDRE (Prop_fdre_C_Q)         0.204    -0.586 r  lcd_r_reg[0]/Q
+                         net (fo=1, routed)           0.001    -0.585    lcd_r_OBUF[0]
+    AB18                 OBUF (Prop_obuf_I_O)         3.415     2.829 r  lcd_r_OBUF[0]_inst/O
+                         net (fo=0)                   0.000     2.829    lcd_r[0]
+    AB18                                                              r  lcd_r[0] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.829    
+  -------------------------------------------------------------------
+                         slack                                  4.126    
+
+Slack (MET) :             4.126ns  (required time - arrival time)
+  Source:                 lcd_r_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_r[1]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.620ns  (logic 3.619ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.840ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.790ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.857    -0.790    pixel_clk
+    OLOGIC_X0Y16         FDRE                                         r  lcd_r_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y16         FDRE (Prop_fdre_C_Q)         0.204    -0.586 r  lcd_r_reg[1]/Q
+                         net (fo=1, routed)           0.001    -0.585    lcd_r_OBUF[1]
+    AA18                 OBUF (Prop_obuf_I_O)         3.415     2.829 r  lcd_r_OBUF[1]_inst/O
+                         net (fo=0)                   0.000     2.829    lcd_r[1]
+    AA18                                                              r  lcd_r[1] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.829    
+  -------------------------------------------------------------------
+                         slack                                  4.126    
+
+Slack (MET) :             4.126ns  (required time - arrival time)
+  Source:                 lcd_g_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_g[3]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.617ns  (logic 3.616ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.838ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.788ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.859    -0.788    pixel_clk
+    OLOGIC_X0Y9          FDRE                                         r  lcd_g_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y9          FDRE (Prop_fdre_C_Q)         0.204    -0.584 r  lcd_g_reg[3]/Q
+                         net (fo=1, routed)           0.001    -0.583    lcd_g_OBUF[3]
+    T18                  OBUF (Prop_obuf_I_O)         3.412     2.829 r  lcd_g_OBUF[3]_inst/O
+                         net (fo=0)                   0.000     2.829    lcd_g[3]
+    T18                                                               r  lcd_g[3] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.829    
+  -------------------------------------------------------------------
+                         slack                                  4.126    
+
+Slack (MET) :             4.131ns  (required time - arrival time)
+  Source:                 lcd_g_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_g[4]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.621ns  (logic 3.620ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.846ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.796ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.851    -0.796    pixel_clk
+    OLOGIC_X0Y27         FDRE                                         r  lcd_g_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y27         FDRE (Prop_fdre_C_Q)         0.204    -0.592 r  lcd_g_reg[4]/Q
+                         net (fo=1, routed)           0.001    -0.591    lcd_g_OBUF[4]
+    V20                  OBUF (Prop_obuf_I_O)         3.416     2.825 r  lcd_g_OBUF[4]_inst/O
+                         net (fo=0)                   0.000     2.825    lcd_g[4]
+    V20                                                               r  lcd_g[4] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.825    
+  -------------------------------------------------------------------
+                         slack                                  4.131    
+
+Slack (MET) :             4.131ns  (required time - arrival time)
+  Source:                 lcd_b_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_b[0]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.612ns  (logic 3.611ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.838ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.788ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.859    -0.788    pixel_clk
+    OLOGIC_X0Y5          FDRE                                         r  lcd_b_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y5          FDRE (Prop_fdre_C_Q)         0.204    -0.584 r  lcd_b_reg[0]/Q
+                         net (fo=1, routed)           0.001    -0.583    lcd_b_OBUF[0]
+    R16                  OBUF (Prop_obuf_I_O)         3.407     2.824 r  lcd_b_OBUF[0]_inst/O
+                         net (fo=0)                   0.000     2.824    lcd_b[0]
+    R16                                                               r  lcd_b[0] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.824    
+  -------------------------------------------------------------------
+                         slack                                  4.131    
+
+Slack (MET) :             4.133ns  (required time - arrival time)
+  Source:                 lcd_r_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_r[2]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.619ns  (logic 3.618ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.847ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.797ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.850    -0.797    pixel_clk
+    OLOGIC_X0Y23         FDRE                                         r  lcd_r_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y23         FDRE (Prop_fdre_C_Q)         0.204    -0.593 r  lcd_r_reg[2]/Q
+                         net (fo=1, routed)           0.001    -0.592    lcd_r_OBUF[2]
+    Y19                  OBUF (Prop_obuf_I_O)         3.414     2.822 r  lcd_r_OBUF[2]_inst/O
+                         net (fo=0)                   0.000     2.822    lcd_r[2]
+    Y19                                                               r  lcd_r[2] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.822    
+  -------------------------------------------------------------------
+                         slack                                  4.133    
+
+Slack (MET) :             4.134ns  (required time - arrival time)
+  Source:                 lcd_b_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_b[5]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.608ns  (logic 3.607ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.837ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.787ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.860    -0.787    pixel_clk
+    OLOGIC_X0Y4          FDRE                                         r  lcd_b_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y4          FDRE (Prop_fdre_C_Q)         0.204    -0.583 r  lcd_b_reg[5]/Q
+                         net (fo=1, routed)           0.001    -0.582    lcd_b_OBUF[5]
+    N13                  OBUF (Prop_obuf_I_O)         3.403     2.821 r  lcd_b_OBUF[5]_inst/O
+                         net (fo=0)                   0.000     2.821    lcd_b[5]
+    N13                                                               r  lcd_b[5] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.821    
+  -------------------------------------------------------------------
+                         slack                                  4.134    
+
+Slack (MET) :             4.135ns  (required time - arrival time)
+  Source:                 lcd_b_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_b[2]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.608ns  (logic 3.607ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.838ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.788ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.859    -0.788    pixel_clk
+    OLOGIC_X0Y11         FDRE                                         r  lcd_b_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y11         FDRE (Prop_fdre_C_Q)         0.204    -0.584 r  lcd_b_reg[2]/Q
+                         net (fo=1, routed)           0.001    -0.583    lcd_b_OBUF[2]
+    R14                  OBUF (Prop_obuf_I_O)         3.403     2.820 r  lcd_b_OBUF[2]_inst/O
+                         net (fo=0)                   0.000     2.820    lcd_b[2]
+    R14                                                               r  lcd_b[2] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.820    
+  -------------------------------------------------------------------
+                         slack                                  4.135    
+
+Slack (MET) :             4.136ns  (required time - arrival time)
+  Source:                 lcd_r_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_r[3]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.617ns  (logic 3.616ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.847ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.797ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.850    -0.797    pixel_clk
+    OLOGIC_X0Y24         FDRE                                         r  lcd_r_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y24         FDRE (Prop_fdre_C_Q)         0.204    -0.593 r  lcd_r_reg[3]/Q
+                         net (fo=1, routed)           0.001    -0.592    lcd_r_OBUF[3]
+    Y18                  OBUF (Prop_obuf_I_O)         3.412     2.819 r  lcd_r_OBUF[3]_inst/O
+                         net (fo=0)                   0.000     2.819    lcd_r[3]
+    Y18                                                               r  lcd_r[3] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.819    
+  -------------------------------------------------------------------
+                         slack                                  4.136    
+
+Slack (MET) :             4.136ns  (required time - arrival time)
+  Source:                 lcd_g_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_g[0]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.610ns  (logic 3.609ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.840ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.790ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.857    -0.790    pixel_clk
+    OLOGIC_X0Y13         FDRE                                         r  lcd_g_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y13         FDRE (Prop_fdre_C_Q)         0.204    -0.586 r  lcd_g_reg[0]/Q
+                         net (fo=1, routed)           0.001    -0.585    lcd_g_OBUF[0]
+    U18                  OBUF (Prop_obuf_I_O)         3.405     2.819 r  lcd_g_OBUF[0]_inst/O
+                         net (fo=0)                   0.000     2.819    lcd_g[0]
+    U18                                                               r  lcd_g[0] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.819    
+  -------------------------------------------------------------------
+                         slack                                  4.136    
+
+Slack (MET) :             4.136ns  (required time - arrival time)
+  Source:                 lcd_b_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_b[3]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.607ns  (logic 3.606ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.838ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.788ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.859    -0.788    pixel_clk
+    OLOGIC_X0Y12         FDRE                                         r  lcd_b_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y12         FDRE (Prop_fdre_C_Q)         0.204    -0.584 r  lcd_b_reg[3]/Q
+                         net (fo=1, routed)           0.001    -0.583    lcd_b_OBUF[3]
+    P14                  OBUF (Prop_obuf_I_O)         3.402     2.819 r  lcd_b_OBUF[3]_inst/O
+                         net (fo=0)                   0.000     2.819    lcd_b[3]
+    P14                                                               r  lcd_b[3] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.819    
+  -------------------------------------------------------------------
+                         slack                                  4.136    
+
+Slack (MET) :             4.136ns  (required time - arrival time)
+  Source:                 lcd_b_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_b[4]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.606ns  (logic 3.605ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.837ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.787ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.860    -0.787    pixel_clk
+    OLOGIC_X0Y3          FDRE                                         r  lcd_b_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y3          FDRE (Prop_fdre_C_Q)         0.204    -0.583 r  lcd_b_reg[4]/Q
+                         net (fo=1, routed)           0.001    -0.582    lcd_b_OBUF[4]
+    N14                  OBUF (Prop_obuf_I_O)         3.401     2.819 r  lcd_b_OBUF[4]_inst/O
+                         net (fo=0)                   0.000     2.819    lcd_b[4]
+    N14                                                               r  lcd_b[4] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.819    
+  -------------------------------------------------------------------
+                         slack                                  4.136    
+
+Slack (MET) :             4.139ns  (required time - arrival time)
+  Source:                 lcd_r_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_r[4]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.613ns  (logic 3.612ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.847ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.797ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.850    -0.797    pixel_clk
+    OLOGIC_X0Y25         FDRE                                         r  lcd_r_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y25         FDRE (Prop_fdre_C_Q)         0.204    -0.593 r  lcd_r_reg[4]/Q
+                         net (fo=1, routed)           0.001    -0.592    lcd_r_OBUF[4]
+    W20                  OBUF (Prop_obuf_I_O)         3.408     2.816 r  lcd_r_OBUF[4]_inst/O
+                         net (fo=0)                   0.000     2.816    lcd_r[4]
+    W20                                                               r  lcd_r[4] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.816    
+  -------------------------------------------------------------------
+                         slack                                  4.139    
+
+Slack (MET) :             4.140ns  (required time - arrival time)
+  Source:                 lcd_r_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_r[5]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.607ns  (logic 3.606ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.842ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.792ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.855    -0.792    pixel_clk
+    OLOGIC_X0Y17         FDRE                                         r  lcd_r_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y17         FDRE (Prop_fdre_C_Q)         0.204    -0.588 r  lcd_r_reg[5]/Q
+                         net (fo=1, routed)           0.001    -0.587    lcd_r_OBUF[5]
+    W17                  OBUF (Prop_obuf_I_O)         3.402     2.815 r  lcd_r_OBUF[5]_inst/O
+                         net (fo=0)                   0.000     2.815    lcd_r[5]
+    W17                                                               r  lcd_r[5] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.815    
+  -------------------------------------------------------------------
+                         slack                                  4.140    
+
+Slack (MET) :             4.141ns  (required time - arrival time)
+  Source:                 lcd_g_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_g[1]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.605ns  (logic 3.604ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.840ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.790ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.857    -0.790    pixel_clk
+    OLOGIC_X0Y14         FDRE                                         r  lcd_g_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y14         FDRE (Prop_fdre_C_Q)         0.204    -0.586 r  lcd_g_reg[1]/Q
+                         net (fo=1, routed)           0.001    -0.585    lcd_g_OBUF[1]
+    U17                  OBUF (Prop_obuf_I_O)         3.400     2.814 r  lcd_g_OBUF[1]_inst/O
+                         net (fo=0)                   0.000     2.814    lcd_g[1]
+    U17                                                               r  lcd_g[1] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.814    
+  -------------------------------------------------------------------
+                         slack                                  4.141    
+
+Slack (MET) :             4.142ns  (required time - arrival time)
+  Source:                 lcd_r_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_r[7]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.605ns  (logic 3.604ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.842ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.792ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.855    -0.792    pixel_clk
+    OLOGIC_X0Y18         FDRE                                         r  lcd_r_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y18         FDRE (Prop_fdre_C_Q)         0.204    -0.588 r  lcd_r_reg[7]/Q
+                         net (fo=1, routed)           0.001    -0.587    lcd_r_OBUF[7]
+    V17                  OBUF (Prop_obuf_I_O)         3.400     2.813 r  lcd_r_OBUF[7]_inst/O
+                         net (fo=0)                   0.000     2.813    lcd_r[7]
+    V17                                                               r  lcd_r[7] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.813    
+  -------------------------------------------------------------------
+                         slack                                  4.142    
+
+Slack (MET) :             4.147ns  (required time - arrival time)
+  Source:                 lcd_g_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_g[2]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.605ns  (logic 3.604ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.846ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.796ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.851    -0.796    pixel_clk
+    OLOGIC_X0Y21         FDRE                                         r  lcd_g_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y21         FDRE (Prop_fdre_C_Q)         0.204    -0.592 r  lcd_g_reg[2]/Q
+                         net (fo=1, routed)           0.001    -0.591    lcd_g_OBUF[2]
+    V19                  OBUF (Prop_obuf_I_O)         3.400     2.809 r  lcd_g_OBUF[2]_inst/O
+                         net (fo=0)                   0.000     2.809    lcd_g[2]
+    V19                                                               r  lcd_g[2] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.809    
+  -------------------------------------------------------------------
+                         slack                                  4.147    
+
+Slack (MET) :             4.147ns  (required time - arrival time)
+  Source:                 lcd_r_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_r[6]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.604ns  (logic 3.603ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        2.846ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.796ns
+    Clock Pessimism Removal (CPR):    -0.503ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.851    -0.796    pixel_clk
+    OLOGIC_X0Y22         FDRE                                         r  lcd_r_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X0Y22         FDRE (Prop_fdre_C_Q)         0.204    -0.592 r  lcd_r_reg[6]/Q
+                         net (fo=1, routed)           0.001    -0.591    lcd_r_OBUF[6]
+    V18                  OBUF (Prop_obuf_I_O)         3.399     2.808 r  lcd_r_OBUF[6]_inst/O
+                         net (fo=0)                   0.000     2.808    lcd_r[6]
+    V18                                                               r  lcd_r[6] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.503    12.049    
+                         clock uncertainty           -0.094    11.955    
+                         output delay                -5.000     6.955    
+  -------------------------------------------------------------------
+                         required time                          6.955    
+                         arrival time                          -2.808    
+  -------------------------------------------------------------------
+                         slack                                  4.147    
+
+Slack (MET) :             4.375ns  (required time - arrival time)
+  Source:                 lcd_de_reg/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_de
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.621ns  (logic 3.620ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        3.091ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.788ns
+    Clock Pessimism Removal (CPR):    -0.250ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.859    -0.788    pixel_clk
+    OLOGIC_X1Y10         FDRE                                         r  lcd_de_reg/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X1Y10         FDRE (Prop_fdre_C_Q)         0.204    -0.584 r  lcd_de_reg/Q
+                         net (fo=1, routed)           0.001    -0.583    lcd_de_OBUF
+    AB7                  OBUF (Prop_obuf_I_O)         3.416     2.833 r  lcd_de_OBUF_inst/O
+                         net (fo=0)                   0.000     2.833    lcd_de
+    AB7                                                               r  lcd_de (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.250    12.302    
+                         clock uncertainty           -0.094    12.208    
+                         output delay                -5.000     7.208    
+  -------------------------------------------------------------------
+                         required time                          7.208    
+                         arrival time                          -2.833    
+  -------------------------------------------------------------------
+                         slack                                  4.375    
+
+Slack (MET) :             4.401ns  (required time - arrival time)
+  Source:                 lcd_b_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_b[6]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.595ns  (logic 3.594ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        3.091ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.788ns
+    Clock Pessimism Removal (CPR):    -0.250ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.859    -0.788    pixel_clk
+    OLOGIC_X1Y8          FDRE                                         r  lcd_b_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X1Y8          FDRE (Prop_fdre_C_Q)         0.204    -0.584 r  lcd_b_reg[6]/Q
+                         net (fo=1, routed)           0.001    -0.583    lcd_b_OBUF[6]
+    V9                   OBUF (Prop_obuf_I_O)         3.390     2.807 r  lcd_b_OBUF[6]_inst/O
+                         net (fo=0)                   0.000     2.807    lcd_b[6]
+    V9                                                                r  lcd_b[6] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.250    12.302    
+                         clock uncertainty           -0.094    12.208    
+                         output delay                -5.000     7.208    
+  -------------------------------------------------------------------
+                         required time                          7.208    
+                         arrival time                          -2.807    
+  -------------------------------------------------------------------
+                         slack                                  4.401    
+
+Slack (MET) :             4.404ns  (required time - arrival time)
+  Source:                 lcd_hsync_reg/C
+                            (rising edge-triggered cell FDSE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_hsync
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.592ns  (logic 3.591ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        3.091ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.788ns
+    Clock Pessimism Removal (CPR):    -0.250ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.859    -0.788    pixel_clk
+    OLOGIC_X1Y7          FDSE                                         r  lcd_hsync_reg/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X1Y7          FDSE (Prop_fdse_C_Q)         0.204    -0.584 r  lcd_hsync_reg/Q
+                         net (fo=1, routed)           0.001    -0.583    lcd_hsync_OBUF
+    V8                   OBUF (Prop_obuf_I_O)         3.387     2.804 r  lcd_hsync_OBUF_inst/O
+                         net (fo=0)                   0.000     2.804    lcd_hsync
+    V8                                                                r  lcd_hsync (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.250    12.302    
+                         clock uncertainty           -0.094    12.208    
+                         output delay                -5.000     7.208    
+  -------------------------------------------------------------------
+                         required time                          7.208    
+                         arrival time                          -2.804    
+  -------------------------------------------------------------------
+                         slack                                  4.404    
+
+Slack (MET) :             4.411ns  (required time - arrival time)
+  Source:                 lcd_b_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_b[7]
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.583ns  (logic 3.582ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        3.089ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.786ns
+    Clock Pessimism Removal (CPR):    -0.250ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.861    -0.786    pixel_clk
+    OLOGIC_X1Y2          FDRE                                         r  lcd_b_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X1Y2          FDRE (Prop_fdre_C_Q)         0.204    -0.582 r  lcd_b_reg[7]/Q
+                         net (fo=1, routed)           0.001    -0.581    lcd_b_OBUF[7]
+    W9                   OBUF (Prop_obuf_I_O)         3.378     2.797 r  lcd_b_OBUF[7]_inst/O
+                         net (fo=0)                   0.000     2.797    lcd_b[7]
+    W9                                                                r  lcd_b[7] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.250    12.302    
+                         clock uncertainty           -0.094    12.208    
+                         output delay                -5.000     7.208    
+  -------------------------------------------------------------------
+                         required time                          7.208    
+                         arrival time                          -2.797    
+  -------------------------------------------------------------------
+                         slack                                  4.411    
+
+Slack (MET) :             4.428ns  (required time - arrival time)
+  Source:                 lcd_vsync_reg/C
+                            (rising edge-triggered cell FDSE clocked by c1  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            lcd_vsync
+                            (output port clocked by lcd_pclk  {rise@10.000ns fall@20.000ns period=20.000ns})
+  Path Group:             lcd_pclk
+  Path Type:              Max at Fast Process Corner
+  Requirement:            10.000ns  (lcd_pclk rise@10.000ns - c1 rise@0.000ns)
+  Data Path Delay:        3.567ns  (logic 3.566ns (99.972%)  route 0.001ns (0.028%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           5.000ns
+  Clock Path Skew:        3.089ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.552ns = ( 12.552 - 10.000 ) 
+    Source Clock Delay      (SCD):    -0.786ns
+    Clock Pessimism Removal (CPR):    -0.250ns
+  Clock Uncertainty:      0.094ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.175ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c1 rise edge)         0.000     0.000 r  
+    R4                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.457     0.457 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.480     0.937    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.205 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.530    -1.676    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.647 r  clocks/b1/O
+                         net (fo=5615, routed)        0.861    -0.786    pixel_clk
+    OLOGIC_X1Y0          FDSE                                         r  lcd_vsync_reg/C
+  -------------------------------------------------------------------    -------------------
+    OLOGIC_X1Y0          FDSE (Prop_fdse_C_Q)         0.204    -0.582 r  lcd_vsync_reg/Q
+                         net (fo=1, routed)           0.001    -0.581    lcd_vsync_OBUF
+    U7                   OBUF (Prop_obuf_I_O)         3.362     2.780 r  lcd_vsync_OBUF_inst/O
+                         net (fo=0)                   0.000     2.780    lcd_vsync
+    U7                                                                r  lcd_vsync (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock lcd_pclk rise edge)
+                                                     10.000    10.000 r  
+    R4                                                0.000    10.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000    10.000    clocks/sys_clk
+    R4                   IBUF (Prop_ibuf_I_O)         0.269    10.269 r  clocks/input_buffer/O
+                         net (fo=1, routed)           0.440    10.709    clocks/input_clk
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360     8.349 r  clocks/mmcm/CLKOUT1
+                         net (fo=1, routed)           0.486     8.835    clocks/c1
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     8.861 r  clocks/b1/O
+                         net (fo=5615, routed)        0.589     9.450    pixel_clk
+    OLOGIC_X1Y1          ODDR (Prop_oddr_C_Q)         0.177     9.627 r  pclk_out/Q
+                         net (fo=1, routed)           0.001     9.628    lcd_clk_OBUF
+    Y9                   OBUF (Prop_obuf_I_O)         2.925    12.552 r  lcd_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    12.552    lcd_clk
+    Y9                                                                r  lcd_clk (OUT)
+                         clock pessimism             -0.250    12.302    
+                         clock uncertainty           -0.094    12.208    
+                         output delay                -5.000     7.208    
+  -------------------------------------------------------------------
+                         required time                          7.208    
+                         arrival time                          -2.780    
+  -------------------------------------------------------------------
+                         slack                                  4.428    
+
+
+
+

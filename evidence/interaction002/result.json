@@ -1,0 +1,48 @@
+{
+  "status": "FAILED_STOPPED",
+  "stage": "BASELINE",
+  "elapsed": 0.7524574999988545,
+  "failure": [
+    "PRESET1 already selected before baseline"
+  ],
+  "baseline": null,
+  "touch": null,
+  "receipt": null,
+  "submissions": [],
+  "final_state": {
+    "connected": true,
+    "ready": true,
+    "actual": {
+      "0": 1,
+      "1": 1,
+      "16": 134217728,
+      "17": 13312,
+      "18": 862348902,
+      "19": 8192,
+      "32": 30,
+      "33": 1,
+      "34": 1,
+      "256": 100000000,
+      "257": 512,
+      "258": 31,
+      "259": 16,
+      "260": 1,
+      "261": 1
+    },
+    "actual_at": 115179.1476245,
+    "sequence": 1,
+    "epoch": 34,
+    "result": "NONE",
+    "detail": "FPGA actual values confirmed by INFO",
+    "write_receipt": null,
+    "in_flight": null,
+    "queued": {},
+    "stream": true
+  },
+  "token": [
+    1,
+    1506759486
+  ],
+  "worker_alive": false,
+  "scope": "One PRESET1 touch and one PC amplitude intent; no second submit. Stop on first read/write UNKNOWN or FAILED or disconnect, including before baseline; event observer requests Receiver stop. A command already scheduled within the same worker iteration may already have been sent. No explicit second submission. Touch correlates user action with INFO/image, not internal local transaction ID."
+}

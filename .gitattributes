@@ -1,0 +1,2 @@
+# Preserve frozen mixed LF/CRLF bytes and inventory sizes on every checkout.
+* -text

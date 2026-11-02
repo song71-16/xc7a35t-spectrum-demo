@@ -1,0 +1,143 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Sun Nov  1 21:22:38 2026
+| Host         : [redacted workstation]
+| Command      : report_cdc -details -no_waiver -file [redacted local provenance path]
+| Design       : demo_touch_pc_top
+| Device       : 7a35t-fgg484
+| Speed File   : -2  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CDC Report
+
+ID     Severity  Count  Description
+-----  --------  -----  -------------------------------------------------------
+CDC-3  Info         22  1-bit synchronized with ASYNC_REG property
+CDC-6  Warning       1  Multi-bit synchronized with ASYNC_REG property
+CDC-9  Info          9  Asynchronous reset synchronized with ASYNC_REG property
+
+Source Clock: c3
+Destination Clock: c0
+CDC Type: Safely Timed
+
+Row  ID     Severity  Description                                 Depth  Exception   Source (From)                                                                                                  Destination (To)
+---  -----  --------  ------------------------------------------  -----  ----------  -------------------------------------------------------------------------------------------------------------  ----------------------------------------------------------------------------------------------------------------------------
+  1  CDC-3  Info      1-bit synchronized with ASYNC_REG property      3  False Path  control/commands/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.fifo_wr_rst_ic_reg/C   control/commands/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst/syncstages_ff_reg[0]/D
+  2  CDC-3  Info      1-bit synchronized with ASYNC_REG property      3  False Path  control/responses/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.fifo_rd_rst_ic_reg/C  control/responses/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst/syncstages_ff_reg[0]/D
+
+Source Clock: input port clock
+Destination Clock: c0
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                              Depth  Exception   Source (From)  Destination (To)
+---  -----  --------  -------------------------------------------------------  -----  ----------  -------------  ---------------------------------------
+  1  CDC-9  Info      Asynchronous reset synchronized with ASYNC_REG property      3  False Path  sys_rst_n      core/snapshots/wr_reset_pipe_reg[0]/PRE
+  2  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   2  False Path  eth_mdio       phy/mdio/mdio_meta_reg/D
+
+Source Clock: c3
+Destination Clock: c1
+CDC Type: Safely Timed
+
+Row  ID     Severity  Description                                     Depth  Exception   Source (From)                                                                                                      Destination (To)
+---  -----  --------  ----------------------------------------------  -----  ----------  -----------------------------------------------------------------------------------------------------------------  --------------------------------------------------------------------------------------------------------------------------------
+  1  CDC-6  Warning   Multi-bit synchronized with ASYNC_REG property      2  False Path  endpoint/network_evidence/inst/PROBE_IN_INST/probe_in_reg_reg[127:0]/C                                             endpoint/network_evidence/inst/PROBE_IN_INST/data_int_sync1_reg[127:0]/D
+  2  CDC-3  Info      1-bit synchronized with ASYNC_REG property          3  False Path  image_sender/config_cdc/src_sendd_ff_reg/C                                                                         image_sender/config_cdc/xpm_cdc_single_src2dest_inst/syncstages_ff_reg[0]/D
+  3  CDC-3  Info      1-bit synchronized with ASYNC_REG property          3  False Path  image_sender/crossing/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.fifo_rd_rst_ic_reg/C  image_sender/crossing/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst/syncstages_ff_reg[0]/D
+
+Source Clock: dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
+Destination Clock: c1
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                              Depth  Exception   Source (From)                                                                                            Destination (To)
+---  -----  --------  -------------------------------------------------------  -----  ----------  -------------------------------------------------------------------------------------------------------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   2  False Path  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/icn_cmd_en_temp_reg/C       dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_1_reg[0]/D
+  2  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   2  False Path  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/icn_cmd_en_temp_reg/C       dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_ld_reg[0]/D
+  3  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   2  False Path  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/icn_cmd_en_temp_reg/C       dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_ld_reg[0]/D
+  4  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   2  False Path  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD4/icn_cmd_en_temp_reg/C       dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD4/ctl_reg_en_1_reg[0]/D
+  5  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   2  False Path  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD5/icn_cmd_en_temp_reg/C       dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD5/ctl_reg_en_1_reg[0]/D
+  6  CDC-9  Info      Asynchronous reset synchronized with ASYNC_REG property      2  False Path  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/wrdata_rst_reg/C                   dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rst_rd_reg1_reg/PRE
+  7  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   2  False Path  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/icn_cmd_en_temp_reg/C   dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_1_reg[0]/D
+  8  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   2  False Path  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/icn_cmd_en_temp_reg/C  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_ld_reg[0]/D
+  9  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   2  False Path  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/icn_cmd_en_reg[5]/C                dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/icn_cmd_en_5_temp_reg/D
+
+Source Clock: input port clock
+Destination Clock: c1
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                              Depth  Exception   Source (From)  Destination (To)
+---  -----  --------  -------------------------------------------------------  -----  ----------  -------------  ---------------------------------------
+  1  CDC-9  Info      Asynchronous reset synchronized with ASYNC_REG property      4  False Path  sys_rst_n      clocks/pipe_reg[0]/PRE
+  2  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   2  False Path  touch_sda      core/gen_ft.touch/bus/sda_meta_reg/D
+  3  CDC-9  Info      Asynchronous reset synchronized with ASYNC_REG property      2  False Path  sys_rst_n      core/pixel_reset_pipe_reg[0]/CLR
+  4  CDC-9  Info      Asynchronous reset synchronized with ASYNC_REG property      3  False Path  sys_rst_n      core/snapshots/rd_reset_pipe_reg[0]/PRE
+
+Source Clock: input port clock
+Destination Clock: c2
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                              Depth  Exception   Source (From)  Destination (To)
+---  -----  --------  -------------------------------------------------------  -----  ----------  -------------  -------------------------
+  1  CDC-9  Info      Asynchronous reset synchronized with ASYNC_REG property     16  False Path  sys_rst_n      ref_reset/pipe_reg[0]/PRE
+
+Source Clock: c0
+Destination Clock: c3
+CDC Type: Safely Timed
+
+Row  ID     Severity  Description                                 Depth  Exception   Source (From)                                                                                                  Destination (To)
+---  -----  --------  ------------------------------------------  -----  ----------  -------------------------------------------------------------------------------------------------------------  ----------------------------------------------------------------------------------------------------------------------------
+  1  CDC-3  Info      1-bit synchronized with ASYNC_REG property      3  False Path  control/commands/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.fifo_rd_rst_ic_reg/C   control/commands/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst/syncstages_ff_reg[0]/D
+  2  CDC-3  Info      1-bit synchronized with ASYNC_REG property      3  False Path  control/responses/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.fifo_wr_rst_ic_reg/C  control/responses/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst/syncstages_ff_reg[0]/D
+  3  CDC-3  Info      1-bit synchronized with ASYNC_REG property      3  False Path  phy/gigabit_reg/C                                                                                              link_sync/syncstages_ff_reg[0]/D
+
+Source Clock: c1
+Destination Clock: c3
+CDC Type: Safely Timed
+
+Row  ID     Severity  Description                                 Depth  Exception   Source (From)                                                                                                      Destination (To)
+---  -----  --------  ------------------------------------------  -----  ----------  -----------------------------------------------------------------------------------------------------------------  --------------------------------------------------------------------------------------------------------------------------------
+  1  CDC-3  Info      1-bit synchronized with ASYNC_REG property      3  False Path  image_sender/config_cdc/dest_req_ff_reg/C                                                                          image_sender/config_cdc/xpm_cdc_single_dest2src_inst/syncstages_ff_reg[0]/D
+  2  CDC-3  Info      1-bit synchronized with ASYNC_REG property      3  False Path  image_sender/crossing/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.fifo_wr_rst_ic_reg/C  image_sender/crossing/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst/syncstages_ff_reg[0]/D
+
+Source Clock: input port clock
+Destination Clock: c3
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                              Depth  Exception   Source (From)  Destination (To)
+---  -----  --------  -------------------------------------------------------  -----  ----------  -------------  -------------------------
+  1  CDC-9  Info      Asynchronous reset synchronized with ASYNC_REG property      4  False Path  sys_rst_n      net_reset/pipe_reg[0]/PRE
+
+Source Clock: rgmii_receive
+Destination Clock: c3
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                 Depth  Exception   Source (From)                                                                                                 Destination (To)
+---  -----  --------  ------------------------------------------  -----  ----------  ------------------------------------------------------------------------------------------------------------  ---------------------------------------------------------------------------------------------------------------------------
+  1  CDC-3  Info      1-bit synchronized with ASYNC_REG property      3  False Path  receive/crossing/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.fifo_wr_rst_ic_reg/C  receive/crossing/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.wrst_rd_inst/syncstages_ff_reg[0]/D
+
+Source Clock: c1
+Destination Clock: dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                              Depth  Exception   Source (From)                                                                                  Destination (To)
+---  -----  --------  -------------------------------------------------------  -----  ----------  ---------------------------------------------------------------------------------------------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1  CDC-9  Info      Asynchronous reset synchronized with ASYNC_REG property      2  False Path  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/rddata_rst_reg/C         dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rst_rd_reg1_reg/PRE
+  2  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   2  False Path  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_reg[0]/C  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/ma_rst_1_reg/D
+
+Source Clock: c3
+Destination Clock: rgmii_receive
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                 Depth  Exception   Source (From)                                                                                                 Destination (To)
+---  -----  --------  ------------------------------------------  -----  ----------  ------------------------------------------------------------------------------------------------------------  ---------------------------------------------------------------------------------------------------------------------------
+  1  CDC-3  Info      1-bit synchronized with ASYNC_REG property      3  False Path  receive/crossing/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.fifo_rd_rst_ic_reg/C  receive/crossing/fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.rrst_wr_inst/syncstages_ff_reg[0]/D
+
+Source Clock: input port clock
+Destination Clock: rgmii_receive
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                              Depth  Exception   Source (From)  Destination (To)
+---  -----  --------  -------------------------------------------------------  -----  ----------  -------------  -----------------------------
+  1  CDC-9  Info      Asynchronous reset synchronized with ASYNC_REG property      4  False Path  sys_rst_n      receive_reset/pipe_reg[0]/PRE
+

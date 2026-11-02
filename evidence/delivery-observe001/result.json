@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "elapsed": 20.115107799996622,
+  "failures": [],
+  "frames": 568,
+  "first": [
+    [
+      1,
+      917994363
+    ],
+    1130,
+    19047,
+    36,
+    115408.3427373
+  ],
+  "last": [
+    [
+      1,
+      917994363
+    ],
+    1702,
+    19633,
+    36,
+    115427.8691389
+  ],
+  "final_state": {
+    "connected": true,
+    "ready": true,
+    "actual": {
+      "0": 1,
+      "1": 1,
+      "16": 436207616,
+      "17": 8192,
+      "18": 862348902,
+      "19": 8192,
+      "32": 30,
+      "33": 1,
+      "34": 1,
+      "256": 100000000,
+      "257": 512,
+      "258": 31,
+      "259": 16,
+      "260": 1,
+      "261": 1
+    },
+    "actual_at": 115427.7963192,
+    "sequence": 40,
+    "epoch": 36,
+    "result": "NONE",
+    "detail": "FPGA actual values confirmed by INFO",
+    "write_receipt": null,
+    "in_flight": null,
+    "queued": {},
+    "stream": true
+  },
+  "worker_alive": false,
+  "writes": 0,
+  "scope": "20 seconds only, not endurance or full production rate"
+}

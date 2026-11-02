@@ -1,0 +1,864 @@
+{
+  "source_release": "up_event_demo_20261101",
+  "source_git_commit": "f6a248ea18cd723167465bcd67168bee78e77086",
+  "governance_commit": "a8cf213fb9b662fd137a069ad321c9d9e17e95a1",
+  "original_manifest_entries_checked": 85,
+  "files": [
+    {
+      "path": "fpga/dds_sine.mem",
+      "bytes": 24576,
+      "source": "dds_sine.mem",
+      "source_bytes": 24576,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/fir_coeff.mem",
+      "bytes": 217,
+      "source": "fir_coeff.mem",
+      "source_bytes": 217,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/hann.mem",
+      "bytes": 3584,
+      "source": "hann.mem",
+      "source_bytes": 3584,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/hub50.xdc",
+      "bytes": 261,
+      "source": "hub50.xdc",
+      "source_bytes": 261,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/ip/spectrum_fft.xci",
+      "bytes": 23992,
+      "source": "ip/spectrum_fft.xci",
+      "source_bytes": 23992,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/ip/touch_identity_vio.xci",
+      "bytes": 185353,
+      "source": "ip/touch_identity_vio.xci",
+      "source_bytes": 185475,
+      "byte_identical": false,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/log2_fraction.mem",
+      "bytes": 6144,
+      "source": "log2_fraction.mem",
+      "source_bytes": 6144,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/setup.tcl",
+      "bytes": 9139,
+      "source": "setup.tcl",
+      "source_bytes": 9139,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/configs/demo_lcd_touch.xdc",
+      "bytes": 3755,
+      "source": "source/migration/touch_v1/demo/configs/demo_lcd_touch.xdc",
+      "source_bytes": 3755,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/configs/demo_opt_pre.tcl",
+      "bytes": 573,
+      "source": "source/migration/touch_v1/demo/configs/demo_opt_pre.tcl",
+      "source_bytes": 573,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/diagnostics/ft_read_once_20261031/touch_ft_startup.sv",
+      "bytes": 1093,
+      "source": "source/migration/touch_v1/demo/diagnostics/ft_read_once_20261031/touch_ft_startup.sv",
+      "source_bytes": 1093,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_command_bridge.sv",
+      "bytes": 2796,
+      "source": "source/migration/touch_v1/demo/rtl/demo_command_bridge.sv",
+      "source_bytes": 2796,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_control_display_cdc.sv",
+      "bytes": 2147,
+      "source": "source/migration/touch_v1/demo/rtl/demo_control_display_cdc.sv",
+      "source_bytes": 2147,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_dualtime_capture.v",
+      "bytes": 5820,
+      "source": "source/migration/touch_v1/demo/rtl/demo_dualtime_capture.v",
+      "source_bytes": 5820,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_dualtime_columns.sv",
+      "bytes": 5181,
+      "source": "source/migration/touch_v1/demo/rtl/demo_dualtime_columns.sv",
+      "source_bytes": 5181,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_dualtime_core.v",
+      "bytes": 22201,
+      "source": "source/migration/touch_v1/demo/rtl/demo_dualtime_core.v",
+      "source_bytes": 22201,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_dualtime_pixels.sv",
+      "bytes": 2829,
+      "source": "source/migration/touch_v1/demo/rtl/demo_dualtime_pixels.sv",
+      "source_bytes": 2829,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_dualtime_plot.sv",
+      "bytes": 2240,
+      "source": "source/migration/touch_v1/demo/rtl/demo_dualtime_plot.sv",
+      "source_bytes": 2240,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_dualtime_renderer.sv",
+      "bytes": 6615,
+      "source": "source/migration/touch_v1/demo/rtl/demo_dualtime_renderer.sv",
+      "source_bytes": 6615,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_dualtime_runtime_display.sv",
+      "bytes": 9429,
+      "source": "source/migration/touch_v1/demo/rtl/demo_dualtime_runtime_display.sv",
+      "source_bytes": 9429,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_dualtime_snapshot.sv",
+      "bytes": 7622,
+      "source": "source/migration/touch_v1/demo/rtl/demo_dualtime_snapshot.sv",
+      "source_bytes": 7622,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_dualtime_status.sv",
+      "bytes": 6239,
+      "source": "source/migration/touch_v1/demo/rtl/demo_dualtime_status.sv",
+      "source_bytes": 6239,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_eth_endpoint.sv",
+      "bytes": 18288,
+      "source": "source/migration/touch_v1/demo/rtl/demo_eth_endpoint.sv",
+      "source_bytes": 18288,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_ft_frontend.sv",
+      "bytes": 7027,
+      "source": "source/migration/touch_v1/demo/rtl/demo_ft_frontend.sv",
+      "source_bytes": 7027,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_ft_init_compare.sv",
+      "bytes": 3764,
+      "source": "source/migration/touch_v1/demo/rtl/demo_ft_init_compare.sv",
+      "source_bytes": 3764,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_ft_initialized_reader.sv",
+      "bytes": 4667,
+      "source": "source/migration/touch_v1/demo/rtl/demo_ft_initialized_reader.sv",
+      "source_bytes": 4667,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_ft_reader.sv",
+      "bytes": 8101,
+      "source": "source/migration/touch_v1/demo/rtl/demo_ft_reader.sv",
+      "source_bytes": 8101,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_gt9147_reader.sv",
+      "bytes": 10794,
+      "source": "source/migration/touch_v1/demo/rtl/demo_gt9147_reader.sv",
+      "source_bytes": 10794,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_gt9147_startup.sv",
+      "bytes": 2160,
+      "source": "source/migration/touch_v1/demo/rtl/demo_gt9147_startup.sv",
+      "source_bytes": 2160,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_runtime_control.v",
+      "bytes": 15075,
+      "source": "source/migration/touch_v1/demo/rtl/demo_runtime_control.v",
+      "source_bytes": 15075,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_touch_actions.sv",
+      "bytes": 7249,
+      "source": "source/migration/touch_v1/demo/rtl/demo_touch_actions.sv",
+      "source_bytes": 7249,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_touch_frontend.sv",
+      "bytes": 5605,
+      "source": "source/migration/touch_v1/demo/rtl/demo_touch_frontend.sv",
+      "source_bytes": 5605,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_touch_i2c.v",
+      "bytes": 22175,
+      "source": "source/migration/touch_v1/demo/rtl/demo_touch_i2c.v",
+      "source_bytes": 22175,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_touch_overlay.sv",
+      "bytes": 6741,
+      "source": "source/migration/touch_v1/demo/rtl/demo_touch_overlay.sv",
+      "source_bytes": 6741,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_touch_pc_top.sv",
+      "bytes": 8758,
+      "source": "source/migration/touch_v1/demo/rtl/demo_touch_pc_top.sv",
+      "source_bytes": 8758,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_touch_report_cdc.sv",
+      "bytes": 3802,
+      "source": "source/migration/touch_v1/demo/rtl/demo_touch_report_cdc.sv",
+      "source_bytes": 3802,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/demo/rtl/demo_touch_ui_defs.vh",
+      "bytes": 1086,
+      "source": "source/migration/touch_v1/demo/rtl/demo_touch_ui_defs.vh",
+      "source_bytes": 1086,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/ethernet/configs/ethernet_nonpro.xdc",
+      "bytes": 3593,
+      "source": "source/migration/touch_v1/ethernet/configs/ethernet_nonpro.xdc",
+      "source_bytes": 3593,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/ethernet/rtl/eth_async_fifo.sv",
+      "bytes": 1138,
+      "source": "source/migration/touch_v1/ethernet/rtl/eth_async_fifo.sv",
+      "source_bytes": 1138,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/ethernet/rtl/eth_clocks.sv",
+      "bytes": 1521,
+      "source": "source/migration/touch_v1/ethernet/rtl/eth_clocks.sv",
+      "source_bytes": 1521,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/ethernet/rtl/eth_image.sv",
+      "bytes": 6403,
+      "source": "source/migration/touch_v1/ethernet/rtl/eth_image.sv",
+      "source_bytes": 6403,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/ethernet/rtl/eth_mac_rx.sv",
+      "bytes": 2759,
+      "source": "source/migration/touch_v1/ethernet/rtl/eth_mac_rx.sv",
+      "source_bytes": 2759,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/ethernet/rtl/eth_mac_tx.sv",
+      "bytes": 3709,
+      "source": "source/migration/touch_v1/ethernet/rtl/eth_mac_tx.sv",
+      "source_bytes": 3709,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/ethernet/rtl/eth_phy.sv",
+      "bytes": 4490,
+      "source": "source/migration/touch_v1/ethernet/rtl/eth_phy.sv",
+      "source_bytes": 4490,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/ethernet/rtl/eth_rgmii.sv",
+      "bytes": 2418,
+      "source": "source/migration/touch_v1/ethernet/rtl/eth_rgmii.sv",
+      "source_bytes": 2418,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/ethernet/rtl/ethernet_pkg.sv",
+      "bytes": 1349,
+      "source": "source/migration/touch_v1/ethernet/rtl/ethernet_pkg.sv",
+      "source_bytes": 1349,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/rtl/lcd_timing.sv",
+      "bytes": 1826,
+      "source": "source/migration/touch_v1/rtl/lcd_timing.sv",
+      "source_bytes": 1826,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/rtl/plot_coordinate_mapper.sv",
+      "bytes": 1816,
+      "source": "source/migration/touch_v1/rtl/plot_coordinate_mapper.sv",
+      "source_bytes": 1816,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/rtl/plot_line_rasterizer.sv",
+      "bytes": 2949,
+      "source": "source/migration/touch_v1/rtl/plot_line_rasterizer.sv",
+      "source_bytes": 2949,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/rtl/plot_span_accumulator.sv",
+      "bytes": 1754,
+      "source": "source/migration/touch_v1/rtl/plot_span_accumulator.sv",
+      "source_bytes": 1754,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/rtl/snapshot_ingress.sv",
+      "bytes": 1646,
+      "source": "source/migration/touch_v1/rtl/snapshot_ingress.sv",
+      "source_bytes": 1646,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/rtl/status_font.sv",
+      "bytes": 2788,
+      "source": "source/migration/touch_v1/rtl/status_font.sv",
+      "source_bytes": 2788,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/rtl/status_numbers.sv",
+      "bytes": 3795,
+      "source": "source/migration/touch_v1/rtl/status_numbers.sv",
+      "source_bytes": 3795,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/migration/touch_v1/rtl/uart_group_queue.sv",
+      "bytes": 5224,
+      "source": "source/migration/touch_v1/rtl/uart_group_queue.sv",
+      "source_bytes": 5224,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/rtl/dds/dds_dual.v",
+      "bytes": 3123,
+      "source": "source/rtl/dds/dds_dual.v",
+      "source_bytes": 3123,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/rtl/dsp/dsp_frontend.v",
+      "bytes": 1470,
+      "source": "source/rtl/dsp/dsp_frontend.v",
+      "source_bytes": 1470,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/rtl/dsp/fft_postprocess.v",
+      "bytes": 10950,
+      "source": "source/rtl/dsp/fft_postprocess.v",
+      "source_bytes": 10950,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/rtl/dsp/window_hann.v",
+      "bytes": 1701,
+      "source": "source/rtl/dsp/window_hann.v",
+      "source_bytes": 1701,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/rtl/fft/fft_wrapper.v",
+      "bytes": 2476,
+      "source": "source/rtl/fft/fft_wrapper.v",
+      "source_bytes": 2476,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/rtl/fir/fir_symmetric.v",
+      "bytes": 3989,
+      "source": "source/rtl/fir/fir_symmetric.v",
+      "source_bytes": 3989,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/rtl/proto/frame_rx.v",
+      "bytes": 5754,
+      "source": "source/rtl/proto/frame_rx.v",
+      "source_bytes": 5754,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/rtl/proto/frame_tx.v",
+      "bytes": 3832,
+      "source": "source/rtl/proto/frame_tx.v",
+      "source_bytes": 3832,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "fpga/source/rtl/proto/protocol_defs.vh",
+      "bytes": 2925,
+      "source": "source/rtl/proto/protocol_defs.vh",
+      "source_bytes": 2925,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "host/migration/touch_v1/demo/host/app.py",
+      "bytes": 10374,
+      "source": "host-source/migration/touch_v1/demo/host/app.py",
+      "source_bytes": 10374,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "host/migration/touch_v1/demo/host/control_session.py",
+      "bytes": 8740,
+      "source": "host-source/migration/touch_v1/demo/host/control_session.py",
+      "source_bytes": 8740,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "host/migration/touch_v1/demo/host/transport.py",
+      "bytes": 10890,
+      "source": "host-source/migration/touch_v1/demo/host/transport.py",
+      "source_bytes": 10890,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "host/migration/touch_v1/ethernet/host/__init__.py",
+      "bytes": 72,
+      "source": "host-source/migration/touch_v1/ethernet/host/__init__.py",
+      "source_bytes": 72,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "host/migration/touch_v1/ethernet/host/control.py",
+      "bytes": 2523,
+      "source": "host-source/migration/touch_v1/ethernet/host/control.py",
+      "source_bytes": 2523,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "host/migration/touch_v1/ethernet/host/protocol.py",
+      "bytes": 6792,
+      "source": "host-source/migration/touch_v1/ethernet/host/protocol.py",
+      "source_bytes": 6792,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "host/migration/touch_v1/ethernet/host/transport.py",
+      "bytes": 8139,
+      "source": "host-source/migration/touch_v1/ethernet/host/transport.py",
+      "source_bytes": 8139,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "host/pc/__init__.py",
+      "bytes": 87,
+      "source": "host-source/pc/__init__.py",
+      "source_bytes": 87,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "host/pc/proto.py",
+      "bytes": 13940,
+      "source": "host-source/pc/proto.py",
+      "source_bytes": 13940,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "host/pc/protocol_constants.py",
+      "bytes": 2542,
+      "source": "host-source/pc/protocol_constants.py",
+      "source_bytes": 2542,
+      "byte_identical": true,
+      "category": "frozen-input"
+    },
+    {
+      "path": "tests/test_control_session.py",
+      "bytes": 8547,
+      "source": "governance/migration/touch_v1/demo/host/test_control_session.py",
+      "source_bytes": 8547,
+      "byte_identical": true,
+      "category": "offline-test"
+    },
+    {
+      "path": "tests/test_integration.py",
+      "bytes": 13670,
+      "source": "governance/migration/touch_v1/demo/host/test_integration.py",
+      "source_bytes": 13670,
+      "byte_identical": true,
+      "category": "offline-test"
+    },
+    {
+      "path": "tests/test_threaded_transport.py",
+      "bytes": 15091,
+      "source": "governance/migration/touch_v1/demo/host/test_threaded_transport.py",
+      "source_bytes": 15091,
+      "byte_identical": true,
+      "category": "offline-test"
+    },
+    {
+      "path": "tests/test_write_receipt.py",
+      "bytes": 1590,
+      "source": "governance/migration/touch_v1/demo/host/test_write_receipt.py",
+      "source_bytes": 1613,
+      "byte_identical": false,
+      "category": "offline-test",
+      "adaptation": "test helper import adjusted to public tests package"
+    },
+    {
+      "path": "tests/test_ethernet_protocol.py",
+      "bytes": 3594,
+      "source": "governance/migration/touch_v1/ethernet/tests/test_protocol.py",
+      "source_bytes": 3594,
+      "byte_identical": true,
+      "category": "offline-test"
+    },
+    {
+      "path": "tests/test_ethernet_receiver_diagnostics.py",
+      "bytes": 3092,
+      "source": "governance/migration/touch_v1/ethernet/tests/test_receiver_diagnostics.py",
+      "source_bytes": 3092,
+      "byte_identical": true,
+      "category": "offline-test"
+    },
+    {
+      "path": "tools/offline_guard.py",
+      "bytes": 1592,
+      "source": "governance/tools/offline_guard.py",
+      "source_bytes": 1592,
+      "byte_identical": true,
+      "category": "offline-test"
+    },
+    {
+      "path": "evidence/interaction003/result.json",
+      "bytes": 2186,
+      "source": "evidence/interaction003/result.json",
+      "source_bytes": 2186,
+      "byte_identical": true,
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/delivery-observe001/result.json",
+      "bytes": 1049,
+      "source": "evidence/delivery-observe001/result.json",
+      "source_bytes": 1049,
+      "byte_identical": true,
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/interaction001/result.json",
+      "bytes": 1158,
+      "source": "evidence/interaction001/result.json",
+      "source_bytes": 1158,
+      "byte_identical": true,
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/interaction002/result.json",
+      "bytes": 1333,
+      "source": "evidence/interaction002/result.json",
+      "source_bytes": 1333,
+      "byte_identical": true,
+      "category": "evidence"
+    },
+    {
+      "path": "docs/images/baseline.png",
+      "bytes": 13097,
+      "source": "evidence/interaction003/baseline.png",
+      "source_bytes": 13097,
+      "byte_identical": true,
+      "category": "screenshot"
+    },
+    {
+      "path": "evidence/interaction003/baseline.json",
+      "bytes": 772,
+      "source": "evidence/interaction003/baseline.json",
+      "source_bytes": 772,
+      "byte_identical": true,
+      "category": "evidence"
+    },
+    {
+      "path": "docs/images/touch_applied.png",
+      "bytes": 14969,
+      "source": "evidence/interaction003/touch_applied.png",
+      "source_bytes": 14969,
+      "byte_identical": true,
+      "category": "screenshot"
+    },
+    {
+      "path": "evidence/interaction003/touch_applied.json",
+      "bytes": 775,
+      "source": "evidence/interaction003/touch_applied.json",
+      "source_bytes": 775,
+      "byte_identical": true,
+      "category": "evidence"
+    },
+    {
+      "path": "docs/images/pc_applied.png",
+      "bytes": 14357,
+      "source": "evidence/interaction003/pc_applied.png",
+      "source_bytes": 14357,
+      "byte_identical": true,
+      "category": "screenshot"
+    },
+    {
+      "path": "evidence/interaction003/pc_applied.json",
+      "bytes": 973,
+      "source": "evidence/interaction003/pc_applied.json",
+      "source_bytes": 973,
+      "byte_identical": true,
+      "category": "evidence"
+    },
+    {
+      "path": "evidence/reports/demo_touch_pc_top_timing_summary_routed.rpt",
+      "bytes": 3764694,
+      "source": "reports/demo_touch_pc_top_timing_summary_routed.rpt",
+      "source_bytes": 3764721,
+      "byte_identical": false,
+      "category": "report-redacted"
+    },
+    {
+      "path": "evidence/reports/demo_touch_pc_top_utilization_placed.rpt",
+      "bytes": 12946,
+      "source": "reports/demo_touch_pc_top_utilization_placed.rpt",
+      "source_bytes": 12972,
+      "byte_identical": false,
+      "category": "report-redacted"
+    },
+    {
+      "path": "evidence/reports/demo_touch_pc_top_route_status.rpt",
+      "bytes": 651,
+      "source": "reports/demo_touch_pc_top_route_status.rpt",
+      "source_bytes": 651,
+      "byte_identical": true,
+      "category": "report-redacted"
+    },
+    {
+      "path": "evidence/reports/demo_touch_pc_top_drc_routed.rpt",
+      "bytes": 46154,
+      "source": "reports/demo_touch_pc_top_drc_routed.rpt",
+      "source_bytes": 46180,
+      "byte_identical": false,
+      "category": "report-redacted"
+    },
+    {
+      "path": "evidence/reports/demo_touch_pc_top_methodology_drc_routed.rpt",
+      "bytes": 53575,
+      "source": "reports/demo_touch_pc_top_methodology_drc_routed.rpt",
+      "source_bytes": 53601,
+      "byte_identical": false,
+      "category": "report-redacted"
+    },
+    {
+      "path": "evidence/reports/cdc-routed.rpt",
+      "bytes": 16829,
+      "source": "reports/cdc-routed.rpt",
+      "source_bytes": 16919,
+      "byte_identical": false,
+      "category": "report-redacted"
+    },
+    {
+      "path": "evidence/reports/debug-routed.rpt",
+      "bytes": 92964,
+      "source": "reports/debug-routed.rpt",
+      "source_bytes": 92991,
+      "byte_identical": false,
+      "category": "report-redacted"
+    },
+    {
+      "path": "evidence/reports/lcd-hold.rpt",
+      "bytes": 132556,
+      "source": "reports/lcd-hold.rpt",
+      "source_bytes": 132644,
+      "byte_identical": false,
+      "category": "report-redacted"
+    },
+    {
+      "path": "evidence/reports/lcd-setup.rpt",
+      "bytes": 131856,
+      "source": "reports/lcd-setup.rpt",
+      "source_bytes": 131945,
+      "byte_identical": false,
+      "category": "report-redacted"
+    }
+  ],
+  "excluded_from_85": [
+    {
+      "source": "board_input.mem",
+      "bytes": 2820,
+      "reason": "not referenced by frozen project setup or PC runtime (old generator/test-only inputs)"
+    },
+    {
+      "source": "demo_touch_pc_up_event.bit",
+      "bytes": 2192125,
+      "reason": "not a setup/runtime dependency; bit/LTX held in original release pending redistribution clearance"
+    },
+    {
+      "source": "demo_touch_pc_up_event.ltx",
+      "bytes": 128557,
+      "reason": "not a setup/runtime dependency; bit/LTX held in original release pending redistribution clearance"
+    },
+    {
+      "source": "source/pc/proto.py",
+      "bytes": 13940,
+      "reason": "not referenced by frozen project setup or PC runtime (old generator/test-only inputs)"
+    },
+    {
+      "source": "source/pc/protocol_constants.py",
+      "bytes": 2542,
+      "reason": "not referenced by frozen project setup or PC runtime (old generator/test-only inputs)"
+    },
+    {
+      "source": "source/migration/touch_v1/ethernet/host/protocol.py",
+      "bytes": 6792,
+      "reason": "not referenced by frozen project setup or PC runtime (old generator/test-only inputs)"
+    },
+    {
+      "source": "source/migration/touch_v1/ethernet/scripts/vectors.py",
+      "bytes": 7932,
+      "reason": "not referenced by frozen project setup or PC runtime (old generator/test-only inputs)"
+    },
+    {
+      "source": "source/migration/touch_v1/demo/configs/demo_touch_constraint_gate.tcl",
+      "bytes": 951,
+      "reason": "not referenced by frozen project setup or PC runtime (old generator/test-only inputs)"
+    },
+    {
+      "source": "source/migration/touch_v1/demo/sim/demo_coexist_clocks.sv",
+      "bytes": 842,
+      "reason": "not referenced by frozen project setup or PC runtime (old generator/test-only inputs)"
+    },
+    {
+      "source": "source/migration/touch_v1/demo/sim/demo_gt9147_device_model.sv",
+      "bytes": 5233,
+      "reason": "not referenced by frozen project setup or PC runtime (old generator/test-only inputs)"
+    },
+    {
+      "source": "source/migration/touch_v1/demo/sim/tb_demo_touch_pc_coexist.sv",
+      "bytes": 16956,
+      "reason": "not referenced by frozen project setup or PC runtime (old generator/test-only inputs)"
+    },
+    {
+      "source": "source/migration/touch_v1/demo/tools/prepare_final_top.py",
+      "bytes": 10419,
+      "reason": "not referenced by frozen project setup or PC runtime (old generator/test-only inputs)"
+    }
+  ],
+  "third_party_permission_status": "Third-party redistribution terms not verified; owner explicitly requested disclosure and publication. Not an upstream grant; excluded from MIT."
+}
