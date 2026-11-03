@@ -1,0 +1,29 @@
+{
+  "kind": "DERIVED_SELECTED_FIELDS_NOT_FULL_LOG",
+  "source_run_id": "demo_loop_recheck_20261102_001",
+  "source_files": [
+    "hardware-preflight.json",
+    "hardware-results.json",
+    "host-source-review.json",
+    "REPORT.md"
+  ],
+  "experiment_date": "2026-11-02",
+  "prepared_date": "2026-11-03",
+  "preflight_original_exit_code": 0,
+  "preflight_observation": "no supported debug cores / debug hub not detected; did not satisfy readiness despite command exit 0",
+  "preflight_exact_selected_lines": [
+    "INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.",
+    "WARNING: [Labtools 27-3361] The debug hub core was not detected.",
+    "WARNING: [Labtoolstcl 44-169] No matching hw_vios were found."
+  ],
+  "program_original_exit_code": 0,
+  "after_program_exact_selected_lines": [
+    "VIO_COUNT 5"
+  ],
+  "final_exact_selected_lines": [
+    "CRC_ERROR 0 DONE 1"
+  ],
+  "operations_from_original_report": "one frozen-image SRAM program; no new synthesis/implementation/Flash; original report says target/server closed afterward",
+  "omissions": "device serial, core UUIDs, machine paths, raw VIO/network words and full logs remain in local originals; no diagnosis of initial root cause inferred",
+  "new_hardware_action_in_this_supplement": false
+}

@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "prepared_date": "2026-11-03",
+  "origin_run_id": "demo_loop_recheck_20261102_001",
+  "storage": "original run remains on source computer; selected byte-identical copies in public repository",
+  "complete_rerun_package": false,
+  "files": [
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "metrics.json",
+      "public_relative_path": "evidence/demo-loop-20261102-001/metrics.json",
+      "bytes": 271,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/baseline.json",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/baseline.json",
+      "bytes": 768,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/event-log.json",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/event-log.json",
+      "bytes": 101129,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/image-metadata.json",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/image-metadata.json",
+      "bytes": 97231,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/pc_applied.json",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/pc_applied.json",
+      "bytes": 967,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/progress.json",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/progress.json",
+      "bytes": 183,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/result.json",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/result.json",
+      "bytes": 2268,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/send-evidence.json",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/send-evidence.json",
+      "bytes": 30687,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/states.json",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/states.json",
+      "bytes": 52485,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/submissions.json",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/submissions.json",
+      "bytes": 188,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/touch-result.json",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/touch-result.json",
+      "bytes": 125,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/touch_applied.json",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/touch_applied.json",
+      "bytes": 770,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/baseline.png",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/baseline.png",
+      "bytes": 15621,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/pc-window.png",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/pc-window.png",
+      "bytes": 223891,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/pc_applied.png",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/pc_applied.png",
+      "bytes": 14323,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    },
+    {
+      "source_root_id": "demo_loop_recheck_20261102_001",
+      "source_relative_path": "interaction001/touch_applied.png",
+      "public_relative_path": "evidence/demo-loop-20261102-001/interaction001/touch_applied.png",
+      "bytes": 15235,
+      "copy_method": "unmodified bytes",
+      "byte_comparison": "EQUAL"
+    }
+  ]
+}

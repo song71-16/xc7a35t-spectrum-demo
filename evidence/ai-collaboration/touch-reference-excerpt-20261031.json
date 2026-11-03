@@ -1,0 +1,14 @@
+{
+  "kind": "DERIVED_EXACT_PARAGRAPH_EXCERPTS_NOT_FULL_REPORT",
+  "source_relative_path": "docs/verification/demo-touch-reference-audit-2026-10-31-01.md",
+  "source_tree_role": "internal demo; original remains on source computer",
+  "source_date": "2026-10-31",
+  "prepared_date": "2026-11-03",
+  "historical_not_current_status": true,
+  "excerpts": [
+    "首提交0b812469a580e89a8ad1f76680a53c4ae6318f9f，2026-10-22T11:28:07+08，无父提交。panel_smoke_001、spectrum_board_001两个完整发布目录及status_board_001反馈，共86份文件，在两树均与初始Git blob逐字相等；含bit/源码/manifest/反馈，未计算新hash。",
+    "rgb_panel_smoke_top.sv18–21把touch_scl/sda/int/rst全赋Z；spectrum_rgb_board_top.sv13同样四脚zzzz。spectrum_touch_core虽含touch命名，但没有物理SCL/SDA/INT/RST端口。因此可确定找到建库时保留的成功显示版本，不能据此证明实际触控IC或手指交互已验。此判断不等于声称用户从未有其他成功触控文件。",
+    "| 触控族识别 | touch_dri.v237–298：4384/4342/1018直接GT；7016先FT0x38、8bit寄存器A1读2字节，再识别FT版本3003/0001/0002/0000，否则走GT0x14 | 固定GT0x14、16bit地址8140/8144/8146，首事务NACK后停止 | FT兼容路径未覆盖；NACK不证明是坏线或GT不存在，仍不推定实际为FT |"
+  ],
+  "scope": "historical Git/feedback and static protocol comparison; this supplement does not re-run original comparisons or hardware"
+}

@@ -1,0 +1,46 @@
+{
+  "metadata": [
+    [
+      1,
+      1011420977
+    ],
+    2,
+    3194,
+    0,
+    193806.0939934
+  ],
+  "state": {
+    "connected": true,
+    "ready": true,
+    "actual": {
+      "0": 1,
+      "1": 1,
+      "16": 431174451,
+      "17": 16384,
+      "18": 862348902,
+      "19": 8192,
+      "32": 30,
+      "33": 1,
+      "34": 1,
+      "256": 100000000,
+      "257": 512,
+      "258": 31,
+      "259": 16,
+      "260": 1,
+      "261": 1
+    },
+    "actual_at": 193806.0230905,
+    "sequence": 1,
+    "epoch": 0,
+    "result": "NONE",
+    "detail": "FPGA actual values confirmed by INFO",
+    "write_receipt": null,
+    "in_flight": null,
+    "queued": {},
+    "stream": true
+  },
+  "token": [
+    1,
+    1011420977
+  ]
+}

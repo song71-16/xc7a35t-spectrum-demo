@@ -1,0 +1,7 @@
+{
+  "pc_submit_to_ack_ms": 28.35649999906309,
+  "pc_submit_to_info_ms": 28.769100026693195,
+  "pc_submit_to_image_ms": 92.52890001516789,
+  "samples": 1,
+  "scope": "host monotonic timestamps; not physical touch latency; image observation includes GUI scheduling"
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "at": 193838.8757665,
+    "token": [
+      1,
+      1011420977
+    ],
+    "intent": {
+      "17": 8192
+    },
+    "accepted": true,
+    "baseline_sequence": 66
+  }
+]

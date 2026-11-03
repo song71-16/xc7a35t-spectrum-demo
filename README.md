@@ -2,13 +2,17 @@
 
 基于 XC7A35T 的内部 DDS 信号演示：两路 DDS → 对称 FIR → Hann 加窗 → 512 点 FFT → 时域/频谱绘制。LCD 与 PC 接收同一 FPGA 渲染源的画面；触控和 PC 均可修改参数，并通过 FPGA 实际值、配置版本（epoch）和新图像确认生效。
 
-本仓库是比赛源码与展示入口，从 `up_event_demo_20261101` 冻结交付独立整理，**不包含原私有项目历史**。固定提交标签为 `competition-demo-v1.0`；以该标签下文件提交作品，不引用持续变化的 main。
+本仓库是比赛源码与展示入口，从 `up_event_demo_20261101` 冻结交付独立整理，**不包含原私有项目历史**。冻结源码标签为 `competition-demo-v1.0`，保持原样；2026-11-03 另补协作、技能与实验材料，见下方索引。正式提交应同时指定包含补充材料的实际版本，旧标签不包含这些新增文件。
 
 **验证等级：DEMO_LOOP_VERIFIED，仅限定展示闭环。** 不是外部 ADC 测量仪、整板验收或长期稳定版本。显示的 100 MHz 是设计时钟/内部数值换算参数，不是已经验证的持续采集吞吐；频率数字位数也不是测量准确度。
 
 ![PC 修改幅度后的 FPGA 渲染画面](docs/images/pc_applied.png)
 
 上图为既有受控演示收到的 FPGA 图像，epoch36、source15219；不是本轮重新拍摄或硬件测试。另有 [基线](docs/images/baseline.png) 和 [触控后](docs/images/touch_applied.png)。
+
+## 参赛补充材料（2026-11-03）
+
+[配套材料总索引](report/README.md) · [真实大模型协作与纠错](report/ai-collaboration.md) · [参赛技能包](skill/README.md) · [11月2日实验附件](evidence/demo-loop-20261102-001/README.md) · [本轮整理与后审](docs/competition-supplement-2026-11-03.md)。新增材料保留原 run 和冻结版本，11月2日实验与下文11月1日记录分开；本轮只做离线整理。
 
 ## 硬件和软件
 
